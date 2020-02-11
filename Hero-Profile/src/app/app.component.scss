@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Raleway&display=swap');
+@import '../assets/styles/colors.scss';
+
+.profile__wprapper {
+  color: $white;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
+
+  .hero-info__wrapper {
+    font-family: 'Raleway', sans-serif;
+    .info-panel {
+      background-color: $dark-blue;
+      padding: 1em 1em 7px 1em;
+      border-radius: 5px;
+      .name,
+      .age {
+        text-align: center;
+      }
+
+      .age {
+        opacity: 0.7;
+        font-size: 80%;
+      }
+
+      .avatar {
+        background-color: $light-blue;
+        border-radius: 5px;
+        height: 10em;
+        margin-bottom: 5px;
+      }
+    }
+
+    .contacts-panel {
+      background-color: $dark-blue;
+      padding: 5px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+
+      a {
+        padding: 0.5em;
+        border-radius: 5px;
+        font-size: 130%;
+        color: $white;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $link-highlighted;
+        }
+      }
+    }
+  }
+
+  .questionary__wrapper {
+    margin: 0 10px;
+    max-width: 500px;
+    border: 5px dotted $dark-blue;
+    border-radius: 10px;
+    padding: 1em;
+
+    h1 {
+      font-family: 'Oswald', sans-serif;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 150%;
+      color: rgba($light-blue, 0.7);
+    }
+
+    .question-block {
+      margin: 10px 0;
+      .question {
+        background-color: $dark-blue;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px 5px 0 0;
+        z-index: 100;
+        transition: 0.3s;
+        color: $light-blue;
+
+        button {
+          cursor: pointer;
+          margin-left: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            font-size: 70%;
+            transition: 0.3s;
+          }
+        }
+      }
+
+      .answer {
+        color: $almost-black;
+        background-color: $light-blue;
+        padding: 10px;
+        box-shadow: inset 0 2px 2px $almost-black;
+        border-radius: 0 0 5px 5px;
+      }
+
+      &.hide-answer {
+        .question {
+          border-radius: 5px;
+          button {
+            i {
+              transform: rotate(-90deg);
+            }
+          }
+        }
+        .answer {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile__wprapper {
+    flex-direction: column;
+    min-width: auto;
+    width: auto;
+
+    .questionary__wrapper {
+      margin-top: 20px;
+    }
+  }
+}
