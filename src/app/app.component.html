@@ -1,0 +1,47 @@
+<mat-card class="card info">
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>{{ hero.firstname }} {{ hero.lastname }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ hero.level }} lvl<span *ngIf="hero?.status">, {{ hero.status }}</span>
+    </mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+<mat-card class="card contacts">
+  <mat-card-header>
+    <mat-card-title>Contacts</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let contact of hero.contacts">
+        {{ contact }}
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="card questions">
+  <mat-card-header>
+    <mat-card-title>Questions</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list *ngIf="hero.survey.length; else noquestions">
+      <mat-list-item *ngFor="let item of hero.survey">
+        <mat-icon matListIcon>question_answer</mat-icon>
+        <h3 matLine>{{ item.question }}</h3>
+        <p matLine>
+          <span>— {{  item.answer }}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #noquestions>
+  <mat-list>
+    <mat-list-item>
+      <h3 matLine>It seems we have a little problem. User survey not found.</h3>
+    </mat-list-item>
+  </mat-list>
+</ng-template>
