@@ -6,7 +6,6 @@
       <img [src]="hero.avatar" class="avatar" alt="avatar" />
       <div class="name">{{ hero.name }} {{ hero.lastName }}</div>
       <div class="age">{{ hero.age }} years</div>
-      <h1></h1>
     </div>
     <div class="contacts-panel">
       <a *ngFor="let key of objectKeys(hero.contacts)" [href]="hero.contacts[key]">

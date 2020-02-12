@@ -17,7 +17,6 @@ export class AppComponent {
   }
 
   toogleAnswer(target) {
-    console.log(target);
     target.parentNode.parentNode.parentNode.classList.toggle('hide-answer');
   }
 }
