@@ -71,56 +71,6 @@
       font-size: 150%;
       color: rgba($light-blue, 0.7);
     }
-
-    .question-block {
-      margin: 10px 0;
-      .question {
-        background-color: $dark-blue;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 5px 5px 0 0;
-        z-index: 100;
-        transition: 0.3s;
-        color: $light-blue;
-
-        button {
-          cursor: pointer;
-          margin-left: 5px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          i {
-            font-size: 70%;
-            transition: 0.3s;
-          }
-        }
-      }
-
-      .answer {
-        color: $almost-black;
-        background-color: $light-blue;
-        padding: 10px;
-        box-shadow: inset 0 2px 2px $almost-black;
-        border-radius: 0 0 5px 5px;
-      }
-
-      &.hide-answer {
-        .question {
-          border-radius: 5px;
-          button {
-            i {
-              transform: rotate(-90deg);
-            }
-          }
-        }
-        .answer {
-          display: none;
-        }
-      }
-    }
   }
 }
 

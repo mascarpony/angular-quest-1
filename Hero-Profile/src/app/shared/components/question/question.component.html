@@ -1,0 +1,7 @@
+<div class="question-block" [ngClass]="{'hide-answer': !expanded}">
+  <div class="question">
+    {{ question }}
+    <button (click)="toggle()"><i class="icon-down-open"></i></button>
+  </div>
+  <div class="answer">{{ answer }}</div>
+</div>

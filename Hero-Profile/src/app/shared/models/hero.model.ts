@@ -3,10 +3,6 @@ export default class Hero {
   lastName: string;
   age: number;
   avatar: string;
-  contacts: {
-    phone: string;
-    mail: string;
-    github: string;
-  };
+  contacts: Array<{ type: string; value: string }>;
   questionary: Array<{ question: string; answer: string }>;
 }

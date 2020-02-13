@@ -9,14 +9,9 @@ import { HeroService } from './core/services/hero.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  objectKeys = Object.keys;
   hero: Hero;
 
   constructor(private heroService: HeroService) {
     this.hero = heroService.getHero();
-  }
-
-  toogleAnswer(target) {
-    target.parentNode.parentNode.parentNode.classList.toggle('hide-answer');
   }
 }

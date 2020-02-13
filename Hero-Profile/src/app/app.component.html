@@ -1,5 +1,3 @@
-
-
 <div class="profile__wprapper">
   <div class="hero-info__wrapper">
     <div class="info-panel">
@@ -8,8 +6,8 @@
       <div class="age">{{ hero.age }} years</div>
     </div>
     <div class="contacts-panel">
-      <a *ngFor="let key of objectKeys(hero.contacts)" [href]="hero.contacts[key]">
-        <i [class]="'icon-' + key"></i
+      <a *ngFor="let contact of hero.contacts" [href]="contact.value">
+        <i [class]="'icon-' + contact.type"></i
       ></a>
     </div>
   </div>
@@ -19,13 +17,12 @@
 <ng-template #questionary>
   <div class="questionary__wrapper">
     <h1>Questionary results</h1>
-    <div *ngFor="let questionaryItem of hero.questionary" class="question-block hide-answer">
-      <div class="question">
-        {{ questionaryItem.question }}
-        <button (click)="toogleAnswer($event.target)"><i class="icon-down-open"></i></button>
-      </div>
-      <div class="answer">{{ questionaryItem.answer }}</div>
-    </div>
+    <app-question
+      *ngFor="let questionaryItem of hero.questionary"
+      [question]="questionaryItem.question"
+      [answer]="questionaryItem.answer"
+    >
+    </app-question>
   </div>
 </ng-template>
 
