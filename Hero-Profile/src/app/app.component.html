@@ -1,0 +1,33 @@
+<div class="profile__wprapper">
+  <div class="hero-info__wrapper">
+    <div class="info-panel">
+      <img [src]="hero.avatar" class="avatar" alt="avatar" />
+      <div class="name">{{ hero.name }} {{ hero.lastName }}</div>
+      <div class="age">{{ hero.age }} years</div>
+    </div>
+    <div class="contacts-panel">
+      <a *ngFor="let contact of hero.contacts" [href]="contact.value">
+        <i [class]="'icon-' + contact.type"></i
+      ></a>
+    </div>
+  </div>
+  <div *ngIf="hero.questionary.length; then questionary; else error"></div>
+</div>
+
+<ng-template #questionary>
+  <div class="questionary__wrapper">
+    <h1>Questionary results</h1>
+    <app-question
+      *ngFor="let questionaryItem of hero.questionary"
+      [question]="questionaryItem.question"
+      [answer]="questionaryItem.answer"
+    >
+    </app-question>
+  </div>
+</ng-template>
+
+<ng-template #error>
+  <div class="questionary__wrapper">
+    <h1>Hero hasnt't answer questionary yet :)</h1>
+  </div>
+</ng-template>
