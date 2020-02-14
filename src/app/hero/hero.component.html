@@ -1,0 +1,16 @@
+<section class="hero" *ngIf="hero">
+    <p class="hero__name">Name: {{hero.name}}</p>
+    <p class="hero__login">Login: {{hero.login}}</p>
+    <img class="hero__image" src="{{ hero.avatar_url }}" alt="">
+    <p class="hero__location">Location: {{hero.location ? hero.location : 'Not specified'}}</p>
+    <p class="hero_repos">Public repositories: {{hero.public_repos}}</p>
+    <p class="hero_hireable">{{hero.hireable ? 'Looking for a job' : 'Don\'t need a job'}}</p>
+</section>
+
+<div *ngIf="isLoading" class="loader-container">
+    <div class="loader" class="lds-dual-ring"></div>
+</div>
+
+<div *ngIf="isError">
+    Oops! It looks like there is some error. Perhabs user doesn't exists :(
+</div>

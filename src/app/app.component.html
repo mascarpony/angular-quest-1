@@ -1,1 +1,12 @@
-{{ title }}
+<div class="hero-form">
+    <h1 class="hero-form__title">Who is your hero?</h1>
+    <form [formGroup]="nicknameForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>Type your hero's nickname</mat-label>
+            <input matInput type="text" formControlName="nickname">
+        </mat-form-field>
+    </form>
+
+    <app-hero [nickname]="nicknameToSearch"></app-hero>
+    
+</div>

@@ -1,0 +1,11 @@
+.hero-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-form__title {
+    margin: 1rem 0;
+    font-family: 'Righteous', cursive;
+}
