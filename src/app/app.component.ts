@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,10 +11,20 @@ export class AppComponent {
     nickname: new FormControl(''),
   });
 
-  nicknameToSearch: string;
+  uniqueNicknames: Set<string>;
 
-  public onSubmit() {
-    this.nicknameToSearch = this.nicknameForm.value.nickname;
+  isError: boolean = false;
+
+  public onSubmit(): void {
+    this.isError = false;
+    const nicknames: [] = this.nicknameForm.value.nickname
+      .split(',')
+      .map((nickname: string) => nickname.trim());
+    this.uniqueNicknames = new Set(nicknames);
     this.nicknameForm.reset();
+  }
+
+  onError(): void {
+    this.isError = true;
   }
 }

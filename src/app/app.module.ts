@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { HeroComponent } from './hero/hero.component';
     NoopAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     AppRoutingModule,
   ],
   providers: [],

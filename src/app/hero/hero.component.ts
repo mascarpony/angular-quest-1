@@ -1,4 +1,6 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import {
+  Component, Input, OnChanges, Output, EventEmitter,
+} from '@angular/core';
 import { HeroService } from '../services/hero.service';
 import { Hero } from '../interfaces/Hero';
 
@@ -9,6 +11,8 @@ import { Hero } from '../interfaces/Hero';
 })
 export class HeroComponent implements OnChanges {
   @Input() nickname: string;
+
+  @Output() error: EventEmitter<any> = new EventEmitter();
 
   hero: Hero;
 
@@ -43,7 +47,7 @@ export class HeroComponent implements OnChanges {
       },
       () => {
         this.isLoading = false;
-        this.isError = true;
+        this.error.emit();
         this.hero = null;
       },
     );

@@ -1,5 +1,11 @@
-/* loader */
+/* variables */
 
+:root {
+  --hero-title-font: 'Righteous', cursive;
+  --hero-card-font: 'K2D', sans-serif;
+}
+
+/* loader */
 .lds-dual-ring {
     display: inline-block;
     width: 80px;
