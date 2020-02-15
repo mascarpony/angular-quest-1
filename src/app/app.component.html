@@ -1,0 +1,13 @@
+<main>
+  <h1>Myself Profile</h1>
+  <section class="my__info">
+    <div class="my__info-name">{{myProfile.name}}</div>
+    <div class="my__info-age">{{myProfile.age}}</div>
+  </section>
+  <section *ngIf="myProfile.questionnaire" class="my__questionnaire">
+    <div *ngFor="let item of myProfile.questionnaire" class="my__question-item">
+      <span class="my__question-item__question">{{item.question}}</span>
+      <span class="my__question-item__answer">{{item.answer}}</span>
+    </div>
+  </section>
+</main>
