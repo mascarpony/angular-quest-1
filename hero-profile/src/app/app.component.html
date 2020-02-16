@@ -1,6 +1,18 @@
 <div class="content" role="main">
-  <div class="card-container">
-    hi
+  <h1>Hero Profile</h1>
+  <img src="https://stickershop.line-scdn.net/stickershop/v1/product/1825672/LINEStorePC/main.png;compress=true" alt="Avatar">
+  <div class='userCard'>
+    <div class="info">Name: {{userCard.name}}</div>
+    <div class="info">Location: {{userCard.location}}</div>
+    <div class="info">Skill: {{userCard.skill}}</div>
   </div>
+  <ul>
+    <li *ngFor="let item of list">
+      <span class="question" >
+        <span *ngIf="item.highlight" class="blue"></span>{{item.question}}
+      </span><br>
+      <span class="answer">{{item.answer}}</span>
+    </li>
+  </ul>
 </div>
 
