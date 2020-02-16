@@ -50,3 +50,11 @@ li {
 .answer {
     font-style: italic;
 }
+
+.button {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    
+}

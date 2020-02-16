@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'hero-profile';
   userCard = {name: 'Olya', location: 'SPB', skill: 'JavaScript'};
+  condition: boolean = false;
+  toggle(){
+    this.condition=!this.condition;
+  }
   list: object[] = [
     {question: 'What is your favourite animal?', answer: 'Dog', style: true},
     {question: 'Have you ever been on the Moon?', answer: 'Yes, three times'},
