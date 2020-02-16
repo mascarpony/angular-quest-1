@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <h2 *ngIf="!isProfileOpen" class="header">Meet new hero!</h2>
+  <h2 *ngIf="isProfileOpen" class="header">About me</h2>
+  <div
+    class="card"
+    [ngStyle]="{
+      overflow: 'hidden'
+      }"
+    (click)="onClick(cardReval, $event)"
+  >
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="../../assets/images/logo.png">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+          {{hero.name}}
+          <i class="material-icons right">more_vert</i>
+        </span>
+      <p><a href={{hero.UPSAlink}}>UPSA Profile</a></p>
+    </div>
+    <div
+      class="card-reveal"
+      #cardReval
+    >
+        <span class="card-title grey-text text-darken-4" (click)="onCloseClick(cardReval, $event)">
+          {{hero.name}}
+          <i class="material-icons right">close</i>
+        </span>
+      <p>Here is some more information about new Angular Hero:</p>
+      <ul *ngIf=hero.details>
+        <li *ngFor="let field of getHeroDetails()">
+          <p><b>{{field[0]}}: </b> {{field[1]}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
