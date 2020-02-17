@@ -1,0 +1,39 @@
+<div class='profile'>
+    <div class='profile__wrapper'>
+        <h1 class='profile__title'>Hero Profile of <span class='world'>«‎There are no numbers in magic»‎</span> world</h1>
+        <div class='profile__info-container'>
+            <img src='./hero.jpg' width='350' height='250' alt='avatar'>
+            <div class='info-wrapper'>
+                <h2>Hero's info</h2>
+                <ul class='info'>
+                    <li>Firtsname: {{hero.name}}</li>
+                    <li>Secondname: {{hero.surname}}</li>
+                    <li>Nickname: {{hero.nickname}}</li>  
+                    <li>Age: {{hero.age}}</li>  
+                </ul>
+            </div>
+        </div>
+        <div class='phrase-wrapper'>
+            <h2>Favorite phrase</h2>
+            <p class='phrase'>«{{hero.favoritePhrase}}»‎</p>
+        </div>
+        <div class='fraction-wrapper'>
+            <h2>Fraction</h2>
+            <p class='fraction'>{{hero.isMagic ? 'Wizard' : 'Scientist'}}</p>
+        </div> 
+        <div class='list-wrapper'>   
+            <h2>Primary skills</h2>
+            <ul class='list-info' *ngFor='let item of hero.primarySkills'>
+                <li>{{item}}</li>
+            </ul>
+        </div>
+        <div *ngIf='hero.factsAboutHero.length > 0' class='list-wrapper list-wrapper--last'> 
+            <h2>Facts</h2>
+            <ul class='list-info' *ngFor='let item of hero.factsAboutHero'>
+                <li>{{item}}</li>
+            </ul>
+        </div>
+        <span class='numbers numbers--second'>11101010101010001</span>
+        <span class='numbers numbers--first'>11101010101010001</span>
+    </div>
+</div>    
