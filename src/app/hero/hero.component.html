@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="container">
+    <p>I'm {{fullName}}</p>
+    <div>
+      <p>Interests:</p>
+      <ul class="info">
+        <li *ngFor="let hobby of hero.interests">
+          <span *ngIf="hobby !== 'coding'">{{hobby}}</span>
+          <span *ngIf="hobby === 'coding'" class="importantInfo">{{hobby}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
