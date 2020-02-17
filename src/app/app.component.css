@@ -1,0 +1,81 @@
+.card {
+    margin: 200px auto;
+    background-color: rgb(230, 221, 230);
+    border-radius: 5px;
+    width: 500px;
+    padding: 5px;
+}
+
+.card-header {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgb(240, 232, 240);
+    border-radius: 5px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 0;
+    background-color: rgb(240, 232, 240);
+    border-radius: 5px;
+
+}
+
+.card-wrapper-info {
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    justify-content: space-evenly;
+
+}
+
+.card-wrapper-info-main {
+    border-radius: 5px;
+    background-color: rgb(250, 244, 250);
+    margin: 5px;
+    width: 200px;
+    padding: 10px;
+}
+
+.card-wrapper-info-contacts {
+    border-radius: 5px;
+    background-color: rgb(250, 244, 250);
+    margin: 5px;
+    width: 200px;
+    padding: 10px;
+}
+.card-wrapper-survey {
+    background-color: rgb(250, 244, 250);
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.card-footer {
+    background-color: rgb(240, 232, 240);
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.survey-question {
+    padding-top: 10px;
+}
+
+span {
+    display: block;
+}
+
+ul {
+    text-align: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+.title {
+    text-align: center;
+}
