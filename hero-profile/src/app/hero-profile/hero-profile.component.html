@@ -27,7 +27,7 @@
                 <li>{{item}}</li>
             </ul>
         </div>
-        <div class='list-wrapper list-wrapper--last'> 
+        <div *ngIf='hero.factsAboutHero.length > 0' class='list-wrapper list-wrapper--last'> 
             <h2>Facts</h2>
             <ul class='list-info' *ngFor='let item of hero.factsAboutHero'>
                 <li>{{item}}</li>
