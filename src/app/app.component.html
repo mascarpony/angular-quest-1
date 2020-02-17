@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header">HERO CARD</div>
+  <div class="card-wrapper">
+    <div class="card-wrapper-info">
+      <div class="card-wrapper-info-main">
+        <span class="title">INFO</span>
+        <ul>
+          <li>Firstname: {{hero.firstName}}</li>
+          <li>Lastname: {{hero.lastName}}</li>
+          <li>Level: {{hero.level}}</li>
+          <li *ngIf="hero?.status">{{hero.status}}</li>
+        </ul>
+      </div>
+      <div class="card-wrapper-info-contacts">
+        <span class="title">CONTACTS</span>
+        <ul class="list-contacts">
+          <li *ngFor="let contact of hero.contacts">
+            {{ contact }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-wrapper-survey">
+      <span class="title">SURVEY</span>
+      <ul class="list-survey">
+        <li *ngFor="let item of hero.survey">
+          <span class="survey-question">Q: {{item.question}}</span>
+          <span class="survey-answer">A: {{item.answer}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-footer">Thanks for watching!</div>
+</div>
+
