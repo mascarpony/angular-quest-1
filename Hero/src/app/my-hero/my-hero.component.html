@@ -1,0 +1,43 @@
+<div class="hero-container">
+<div class="hero__header">
+  <p class="header__main-info">Angular Heroes</p>
+  <p class="header__main-info">Make Angular Great Again</p>
+  <img src="../../assets/logo-angular.png" alt="" class="header__logo">
+</div>
+
+<div class="hero__main-info">
+  <p class="main-info-p">
+    Name: <b>{{ name }}</b>
+  </p>
+  <p class="main-info-p">
+    Specialty: <b>{{ spec }}</b>
+  </p>
+
+  <p class="main-info-p">
+    Education: <b>{{ edu }}</b>
+  </p>
+
+  <div class="wrapper">
+  <p class="main-info-p">
+    <img class="portret" src="../../assets/portret.jpg"/>
+  </p>
+
+  <div *ngIf='show' class="popup">
+    <p class="popup__info">I like it more than React</p>
+    <img src="../../assets/logo-angular.png" alt="" class="popup__logo">
+    <p class="popup__info">P.S. My design is awesome</p>
+  </div>
+
+  </div>
+
+  <button class="button-popup" (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+
+  <h3 class="skills__title">My skills</h3>
+  <ul>
+    <li class="main-info-list" *ngFor='let item of mySkills'>
+    <p> {{item.name}} </p>
+    <p> {{item.time}} </p>
+    </li>
+  </ul>
+
+</div>
