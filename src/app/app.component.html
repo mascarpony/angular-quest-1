@@ -1,0 +1,33 @@
+<div class="heroes-container">
+    <h1 class="heroes-container__title">Who is your hero?</h1>
+
+    <form
+    [formGroup]="nicknameForm"
+    (ngSubmit)="onSubmit()"
+    class="heroes-form">
+
+        <mat-form-field
+        class="heroes-form_full-width"
+        appearance="fill">
+            <mat-label>Type heroes github nicknames to compare</mat-label>
+            <input matInput
+            type="text"
+            formControlName="nickname"
+            placeholder="Example: apple, microsoft">
+        </mat-form-field>
+
+    </form>
+    
+    <div *ngIf="!isError" class="heroes">
+        <app-hero
+        *ngFor="let nickname of uniqueNicknames"
+        [nickname]="nickname"
+        (error)="onError()"></app-hero>
+    </div>
+
+    <div *ngIf="isError" class="error">
+        <img class="error__gif" src="https://media.giphy.com/media/13Ga1gQC6u8E48/giphy.gif" alt="Error gif">
+        <p class="error__message">Oops! It looks like there is some error. Perhabs some user doesn't exists</p>
+    </div>
+    
+</div>

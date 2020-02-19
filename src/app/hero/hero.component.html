@@ -1,0 +1,31 @@
+<section class="hero" *ngIf="hero">
+    <div class="hero-header">
+        <p class="hero__name">
+            Name: {{hero.name}}
+        </p>
+        <p class="hero__login">
+            Alias: {{hero.login}}
+        </p>
+    </div>
+
+    <div class="hero-photo">
+        <img class="hero-photo__image" src="{{ hero.avatar_url }}" alt="Photo of the hero">
+    </div>
+
+    <div class="hero-info">
+        <p class="hero-info__location">
+            Habitat: {{hero.location ? hero.location : 'Not specified'}}
+        </p>
+        <p class="hero-info_repos">
+            Strength: {{hero.public_repos}}
+        </p>
+        <p class="hero-info_hireable">
+            Superpowers: {{hero.hireable ? 'Can fly very high' : 'Can run very fast'}}
+        </p>
+    </div>
+    
+</section>
+
+<div *ngIf="isLoading" class="loader-container">
+    <div class="loader lds-dual-ring"></div>
+</div>
