@@ -18,8 +18,6 @@ export class HeroComponent implements OnChanges {
 
   isLoading: boolean = false;
 
-  isError: boolean = false;
-
   constructor(
     private heroService: HeroService,
   ) { }
@@ -43,7 +41,6 @@ export class HeroComponent implements OnChanges {
           hireable: heroData.hireable,
         };
         this.isLoading = false;
-        this.isError = false;
       },
       () => {
         this.isLoading = false;
